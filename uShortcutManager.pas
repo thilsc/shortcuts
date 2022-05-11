@@ -3,13 +3,9 @@ unit uShortcutManager;
 interface
 
 uses System.Classes, System.Types, System.SysUtils, Vcl.Forms, Vcl.Menus,
-  Vcl.Controls, Vcl.Graphics, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Graphics, Vcl.ExtCtrls, uShortcutsTypes;
 
 type
-  TTipoItemMenu = (timNone, timURL, timFile, timExe, timText);
-  TTipoItemMenuDefault = (timdNone, timdEditar, timdAtualizar, timdFechar);
-  TArrayDefaultEvents = array[TTipoItemMenuDefault] of TNotifyEvent;
-
   TShortcutManager = class
   private
     FListaItens: TStringList;
@@ -26,6 +22,7 @@ type
     procedure ItemMenuFecharClick(Sender: TObject);
     function GetNewInstanceItemMenu: TMenuItem;
     procedure SetDefaultEvents;
+    function GetActualImageIndex(ItemLink: string): Integer;
   public
     property PopupMenu: TPopupMenu read FPopup;
     procedure Load(AConfigFile: string);
@@ -43,31 +40,9 @@ type
     constructor Create(AOwner: TComponent; AImageFile: string); reintroduce;
   end;
 
-const
-  PREFIXO_ITEM_NAME = 'Item_';
-  PREFIXO_ITEM_DEFAULT = 'mnu_';
-  IMAGE_INDEX_NONE = -1;
-  IMAGE_INDEX_APP = 0;
-  IMAGE_INDEX_FECHAR = 1;
-  IMAGE_INDEX_URL = 2;
-  IMAGE_INDEX_FILE = 3;
-  IMAGE_INDEX_EXE = 4;
-  IMAGE_INDEX_REFRESH = 5;
-  IMAGE_INDEX_TEXT = 6;
-  ITEM_MENU_SEP = '-';
-  NAME_DEFAULT  = 'DEFAULT';
-
-  ITEM_MENU_EDITAR = 'Editar Lista...';
-  ITEM_MENU_ATUALIZAR = 'Atualizar';
-  ITEM_MENU_FECHAR = 'Fechar';
-
-  ArrayTipoItemMenuImageIndex: array[TTipoItemMenu] of Integer = (IMAGE_INDEX_NONE, IMAGE_INDEX_URL, IMAGE_INDEX_FILE, IMAGE_INDEX_EXE, IMAGE_INDEX_TEXT);
-  ArrayItemMenuDefault: array[TTipoItemMenuDefault] of string = ('', ITEM_MENU_EDITAR, ITEM_MENU_ATUALIZAR, ITEM_MENU_FECHAR);
-  ArrayItemMenuDefaultImageIndex: array[TTipoItemMenuDefault] of Integer = (IMAGE_INDEX_NONE, IMAGE_INDEX_TEXT, IMAGE_INDEX_REFRESH, IMAGE_INDEX_FECHAR);
-
 implementation
 
-uses Winapi.Windows, Winapi.ShellAPI;
+uses uShortcutsConsts, uShortcutsUtils;
 
 { TShortcutManager }
 
@@ -95,6 +70,18 @@ begin
   FDefaultItems.Add(NAME_DEFAULT+'='+ITEM_MENU_ATUALIZAR);
   FDefaultItems.Add(NAME_DEFAULT+'='+ITEM_MENU_SEP);
   FDefaultItems.Add(NAME_DEFAULT+'='+ITEM_MENU_FECHAR);
+end;
+
+function TShortcutManager.GetActualImageIndex(ItemLink: string): Integer;
+var
+  Icon: TIcon;
+begin
+  Icon := GetIconFromFileOrURL(ItemLink, FPopup.Images.Height, FPopup.Images.Width);
+
+  if Assigned(Icon) then
+    Result := FPopup.Images.AddIcon(Icon)
+  else
+    Result := ArrayTipoItemMenuImageIndex[GetImageIndexItemMenu(ItemLink)];
 end;
 
 function TShortcutManager.GetImageIndexItemMenu(ItemLink: string): TTipoItemMenu;
@@ -164,7 +151,7 @@ begin
         begin
           Name       := PREFIXO_ITEM_NAME+I.ToString;
           Caption    := FListaItens.Names[I];
-          ImageIndex := ArrayTipoItemMenuImageIndex[GetImageIndexItemMenu(FListaItens.ValueFromIndex[I])];
+          ImageIndex := GetActualImageIndex(FListaItens.ValueFromIndex[I]);
           OnClick    := ItemMenuPopupClick;
         end;
 end;
@@ -187,14 +174,14 @@ begin
   I := StrToIntDef(Copy(MenuItem.Name, Length(PREFIXO_ITEM_NAME)+1, Length(MenuItem.Name)-Length(PREFIXO_ITEM_NAME)), -1);
 
   if (I >= 0) then
-    ShellExecute(Application.Handle, 'open', PWideChar(FListaItens.ValueFromIndex[I]), nil, nil, SW_SHOWMAXIMIZED);
+    ExecutarAtalho(FListaItens.ValueFromIndex[I]);
 end;
 
 {$REGION 'Default Events'}
 procedure TShortcutManager.ItemMenuEditarClick(Sender: TObject);
 begin
   if FileExists(FConfigFile) then
-    ShellExecute(Application.Handle, 'open', PWideChar(FConfigFile), nil, nil, SW_SHOWMAXIMIZED);
+    ExecutarAtalho(FConfigFile);
 end;
 
 procedure TShortcutManager.ItemMenuAtualizarClick(Sender: TObject);

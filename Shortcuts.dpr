@@ -3,7 +3,10 @@ program Shortcuts;
 uses
   Vcl.Forms,
   uShortcuts in 'uShortcuts.pas' {frmShortcuts},
-  uShortcutManager in 'uShortcutManager.pas';
+  uShortcutManager in 'uShortcutManager.pas',
+  uShortcutsUtils in 'uShortcutsUtils.pas',
+  uShortcutsConsts in 'uShortcutsConsts.pas',
+  uShortcutsTypes in 'uShortcutsTypes.pas';
 
 {$R *.res}
 
