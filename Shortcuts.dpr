@@ -6,7 +6,13 @@ uses
   uShortcutManager in 'uShortcutManager.pas',
   uShortcutsUtils in 'uShortcutsUtils.pas',
   uShortcutsConsts in 'uShortcutsConsts.pas',
-  uShortcutsTypes in 'uShortcutsTypes.pas';
+  uShortcutsTypes in 'uShortcutsTypes.pas',
+  uCadListaAtalhos in 'uCadListaAtalhos.pas' {frmCadListaAtalhos},
+  uCadAtalho in 'uCadAtalho.pas' {frmCadAtalho},
+  uAtalho in 'uAtalho.pas',
+  uTitlePopupMenu in 'uTitlePopupMenu.pas',
+  uMenuItemPlus in 'uMenuItemPlus.pas',
+  uPopupListPlus in 'uPopupListPlus.pas';
 
 {$R *.res}
 

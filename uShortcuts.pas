@@ -34,8 +34,9 @@ implementation
 
 procedure TfrmShortcuts.FormCreate(Sender: TObject);
 begin
+  tray.Visible := True;
   FManager := TShortcutManager.Create(lstImagens);
-  FManager.Load(CONFIG_FILE);
+  FManager.Load(ExtractFilePath(Application.ExeName) + CONFIG_FILE);
   tray.PopupMenu := FManager.PopupMenu;
 end;
 

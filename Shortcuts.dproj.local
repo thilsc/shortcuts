@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/05/16 18:04:32.000.264,=C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\Unit1.pas</Transaction>
+    <Transaction>2023/05/16 18:04:57.000.483,C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\uShortcutListManager.dfm=C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\Unit1.dfm</Transaction>
+    <Transaction>2023/05/16 18:04:57.000.483,C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\uShortcutListManager.pas=C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\Unit1.pas</Transaction>
+    <Transaction>2023/05/16 20:57:23.000.222,=C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\Unit1.pas</Transaction>
+    <Transaction>2023/05/16 21:39:04.000.956,=C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\Unit2.pas</Transaction>
+    <Transaction>2023/05/16 22:07:42.000.907,C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\uCadAtalho.pas=C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\Unit2.pas</Transaction>
+    <Transaction>2023/05/16 22:07:42.000.907,C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\uCadAtalho.dfm=C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\Unit2.dfm</Transaction>
+    <Transaction>2023/05/16 22:18:45.000.642,=C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\Unit2.pas</Transaction>
+    <Transaction>2023/05/16 22:18:55.000.784,C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\uAtalhos.pas=C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\Unit2.pas</Transaction>
+    <Transaction>2023/05/17 00:07:10.000.520,C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\Unit1.pas=C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\uCadListaAtalhos.pas</Transaction>
+    <Transaction>2023/05/17 00:07:10.000.520,C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\Unit1.dfm=C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\uCadListaAtalhos.dfm</Transaction>
+    <Transaction>2023/05/20 00:20:32.000.044,=C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\Unit1.pas</Transaction>
+    <Transaction>2023/05/20 00:23:39.000.964,C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\uTitlePopupMenu.pas=C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\Unit1.pas</Transaction>
+    <Transaction>2023/05/27 09:29:34.406,=C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\Unit1.pas</Transaction>
+    <Transaction>2023/05/27 09:29:52.148,C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\uMenuItemPlus.pas=C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\Unit1.pas</Transaction>
+    <Transaction>2023/05/27 11:03:53.383,=C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\Unit1.pas</Transaction>
+    <Transaction>2023/05/27 12:02:44.962,=C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\Unit1.pas</Transaction>
+    <Transaction>2023/05/27 12:03:02.424,C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\uPopupListPlus.pas=C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\Unit1.pas</Transaction>
+    <Transaction>2023/05/27 12:07:44.684,C:\Users\thiago.coutinho\OneDrive - AO3\Documentos\Shortcuts.git\uShortcutListManager.pas=</Transaction>
+  </Transactions>
+</BorlandProject>
